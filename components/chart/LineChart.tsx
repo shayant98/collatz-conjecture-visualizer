@@ -5,37 +5,38 @@ ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, T
 
 function LineChart({ numbers }: { numbers: number[] }) {
   return (
-    <Line
-      options={{
-        plugins: {
-          title: {
-            display: true,
-            text: "Collatz Conjecture",
+    <>
+      <Line
+        options={{
+          plugins: {
+            title: {
+              display: false,
+            },
+            legend: {
+              display: false,
+            },
           },
-          legend: {
-            display: false,
-            position: "bottom",
-          },
-        },
-      }}
-      data={{
-        labels: numbers.map((num) => num.toString()),
-        datasets: [
-          {
-            data: numbers,
-            backgroundColor: "#ffbb11",
-            borderColor: "#ffzz04",
-            fill: true,
-            pointRadius: 5,
-            pointHoverRadius: 8,
-            pointBorderColor: "#ffzz04",
-            pointHoverBorderColor: "#ffzz04",
-            pointBorderWidth: 2,
-            pointHoverBorderWidth: 4,
-          },
-        ],
-      }}
-    />
+        }}
+        data={{
+          labels: numbers.map((num) => num.toString()),
+          datasets: [
+            {
+              data: numbers,
+              backgroundColor: "#ffbb11",
+              borderColor: "#ffzz04",
+              fill: true,
+              pointRadius: 5,
+              pointHoverRadius: 8,
+              pointBorderColor: "#ffzz04",
+              pointHoverBorderColor: "#ffzz04",
+              pointBorderWidth: 2,
+              pointHoverBorderWidth: 4,
+              tension: 0.2,
+            },
+          ],
+        }}
+      />
+    </>
   );
 }
 
