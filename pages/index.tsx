@@ -57,7 +57,7 @@ const Home: NextPage = () => {
         <h1 className="text-3xl font-bold mb-5">Collatz Conjecture</h1>
         <AiOutlineInfoCircle className="text-4xl font-bold cursor-pointer hover:scale-105 transition" onClick={() => setshowInfo((state) => !state)} />
       </div>
-      <div className={`w-full h-32 rounded bg-gray-100 mb-5 p-3 ${showInfo ? "visible" : "hidden"}`}>
+      <div className={`w-full  rounded bg-gray-100 mb-5 p-3 ${showInfo ? "visible" : "hidden"}`}>
         <h3 className="text-lg font-bold mb-3">What is Collatz Conjecture?</h3>
         <p>
           The Collatz conjecture is one of the most famous unsolved problems in mathematics. The conjecture asks whether repeating two simple arithmetic operations will eventually
