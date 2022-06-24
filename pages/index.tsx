@@ -1,5 +1,7 @@
 import type { NextPage } from "next";
-import React, { useCallback, useEffect, useMemo, useState } from "react";
+import React, { useCallback, useState } from "react";
+import LineChart from "../components/chart/LineChart";
+import Form from "../components/form/Form";
 
 const Home: NextPage = () => {
   const [input, setinput] = useState(0);
@@ -23,15 +25,8 @@ const Home: NextPage = () => {
 
   return (
     <div>
-      <form>
-        <input type="number" value={isNaN(input) ? "0" : input} onChange={(e) => setinput(parseInt(e.target.value))} />
-        <button type="submit" onClick={(e: React.MouseEvent) => handleSubmit(e)}>
-          run calculations
-        </button>
-      </form>
-
-      <div>{numberArray.toString()}</div>
-      <div> Calculated: {counter.toString()} times</div>
+      <Form input={input} setInput={setinput} handleSubmit={handleSubmit} />
+      <LineChart numbers={numberArray} />
     </div>
   );
 
